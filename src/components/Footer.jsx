@@ -362,7 +362,7 @@ const Footer = () => {
               SRD Machine (by Sharda Industries) All Rights Reserved.
             </p> */}
             <p className="text-sm text-white">
-              2025 Algorion Research & Analysis Private Limited.
+              2025 © Dart. All Rights Reserved. SRD Machine
             </p>
           </div>
         </div>
