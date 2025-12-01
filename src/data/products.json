@@ -3,16 +3,16 @@
     "id": 1,
     "name": "Grinding Machines",
     "description": "We are the most versatile Automatic Grinding Machine supplier in Gujarat. Our machine can grind multiple bearings simultaneously, which helps to reduce the time and costs associated with manual grinding. The machine also uses advanced technology, such as computer numerical control (CNC), to automate the grinding process, ensuring accuracy and consistency.",
-    "image": "/machines/machine1.png",
-    "thumbnails": ["/machines/machine1.png", "/machines/machine2.png", "/machines/machine1.png", "/machines/machine2.png"],
+    "image": "/machines/Gm.png",
+    "thumbnails": ["/machines/Gm.png", "/machines/machine2.png", "/machines/Gm.png", "/machines/machine2.png"],
     "category": "Grinding"
   },
   {
     "id": 2,
     "name": "Turning Machines (PLC/CNC)",
     "description": "Advanced turning machines with PLC and CNC control systems for precision manufacturing. These machines offer exceptional accuracy and repeatability for complex turning operations.",
-    "image": "/machines/machine2.png",
-    "thumbnails": ["/machines/machine2.png", "/machines/machine1.png", "/machines/machine2.png", "/machines/machine1.png"],
+    "image": "/machines/Tm.png",
+    "thumbnails": ["/machines/Tm.png", "/machines/Tm.png", "/machines/Tm.png", "/machines/Tm.png"],
     "category": "Turning"
   },
   {
