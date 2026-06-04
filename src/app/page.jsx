@@ -1,10 +1,33 @@
 'use client';
 
+import { useState } from 'react';
 import Header from '../components/Header';
 import Footer from '../components/Footer';
 import FloatingInquiryForm from '../components/FloatingInquiryForm';
+import Popup from '../components/Popup';
 
 export default function Home() {
+  const [showThankYou, setShowThankYou] = useState(false);
+  const [showVideo, setShowVideo] = useState(false);
+
+  const handleDownload = () => {
+    // Show thank you popup
+    setShowThankYou(true);
+    
+    // Create a link element for download
+    const link = document.createElement('a');
+    link.href = '/files/srd_machines.pdf';
+    link.download = 'SRD_Machines_Brochure.pdf';
+    link.target = '_blank';
+    
+    document.body.appendChild(link);
+    link.click();
+    
+    setTimeout(() => {
+      document.body.removeChild(link);
+    }, 100);
+  };
+
   return (
     <main className="min-h-screen">
       <Header />
@@ -65,62 +88,64 @@ export default function Home() {
       {/* Machine Showcase Video Section */}
       <section className="py-6 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="relative w-full aspect-video rounded-lg overflow-hidden shadow-xl group cursor-pointer">
-            {/* Background Image - Machine */}
-            <div
-              className="absolute inset-0 bg-cover bg-center bg-no-repeat transition-transform duration-300 group-hover:scale-105"
-              style={{ backgroundImage: "url('/machines/machine1.png')" }}
-            />
-            
-            {/* Overlay for better text readability */}
-            <div className="absolute inset-0 bg-gradient-to-r from-black/70 via-black/50 to-black/30" />
-            
-            {/* Content */}
-            <div className="relative z-10 h-full flex items-center justify-center">
-              <div className="text-center text-white">
-                {/* Play Button */}
-                <div className="w-16 h-16 sm:w-20 sm:h-20 md:w-24 md:h-24 bg-gradient-to-r from-[#F26D83] to-[#DD394F] rounded-full flex items-center justify-center mx-auto mb-4 sm:mb-6 shadow-2xl transition-all duration-300 group-hover:scale-110 group-hover:shadow-3xl">
-                  <svg className="w-6 h-6 sm:w-8 sm:h-8 md:w-10 md:h-10 text-white ml-1" fill="currentColor" viewBox="0 0 24 24">
-                    <path d="M8 5v14l11-7z"/>
-                  </svg>
-                </div>
+          <div className="relative w-full aspect-video rounded-lg overflow-hidden shadow-xl">
+            {showVideo ? (
+              /* YouTube Embed - plays inline */
+              <iframe
+                className="absolute inset-0 w-full h-full"
+                src="https://www.youtube.com/embed/G7QsS6ccfOc?autoplay=1&rel=0"
+                title="SRD Machines in Action"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                allowFullScreen
+              />
+            ) : (
+              /* Thumbnail with Play Button */
+              <div 
+                className="absolute inset-0 cursor-pointer group"
+                onClick={() => setShowVideo(true)}
+              >
+                {/* Background Image - Machine */}
+                <div
+                  className="absolute inset-0 bg-cover bg-center bg-no-repeat transition-transform duration-300 group-hover:scale-105"
+                  style={{ backgroundImage: "url('/machines/machine1.png')" }}
+                />
                 
-                {/* Text Content */}
-                <h3 className="text-lg sm:text-xl md:text-2xl font-bold mb-2 sm:mb-3">Watch Our Machines in Action</h3>
-                <p className="text-gray-200 text-sm sm:text-base md:text-lg max-w-md mx-auto">
-                  See our precision machinery at work in our state-of-the-art manufacturing facility
-                </p>
+                {/* Overlay for better text readability */}
+                <div className="absolute inset-0 bg-gradient-to-r from-black/70 via-black/50 to-black/30" />
                 
-                {/* Duration Badge */}
-                <div className="mt-4 sm:mt-6">
-                  <span className="inline-block bg-black/50 backdrop-blur-sm text-white text-xs sm:text-sm px-3 py-1 rounded-full border border-white/20">
-                    ▶ 2:30
-                  </span>
+                {/* Content */}
+                <div className="relative z-10 h-full flex items-center justify-center px-4">
+                  <div className="text-center text-white">
+                    {/* Play Button with Pulse Animation */}
+                    <div className="relative mx-auto mb-3 sm:mb-5 w-14 h-14 sm:w-20 sm:h-20 md:w-24 md:h-24">
+                      {/* Outer Pulse Ring */}
+                      <div className="absolute inset-0 rounded-full bg-white/20 animate-ping" />
+                      {/* Main Button */}
+                      <div className="absolute inset-0 w-full h-full bg-gradient-to-br from-[#F26D83] via-[#E85A6F] to-[#DD394F] rounded-full flex items-center justify-center shadow-[0_0_25px_rgba(242,109,131,0.5)] sm:shadow-[0_0_40px_rgba(242,109,131,0.5)] transition-all duration-300 group-hover:scale-110 group-hover:shadow-[0_0_60px_rgba(242,109,131,0.7)]">
+                        {/* Inner Glow */}
+                        <div className="absolute inset-1 sm:inset-2 rounded-full bg-gradient-to-br from-white/20 to-transparent" />
+                        {/* Play Icon */}
+                        <svg className="relative w-5 h-5 sm:w-7 sm:h-7 md:w-9 md:h-9 text-white ml-0.5 sm:ml-1 drop-shadow-lg" fill="currentColor" viewBox="0 0 24 24">
+                          <path d="M8 5v14l11-7z"/>
+                        </svg>
+                      </div>
+                    </div>
+                    
+                    {/* Watch Video Label */}
+                    <div className="inline-flex items-center gap-1.5 sm:gap-2 bg-white/10 backdrop-blur-sm px-3 py-1.5 sm:px-4 sm:py-2 rounded-full mb-2 sm:mb-3 border border-white/20">
+                      <span className="w-1.5 h-1.5 sm:w-2 sm:h-2 bg-red-500 rounded-full animate-pulse" />
+                      <span className="text-[10px] sm:text-xs font-medium tracking-wide uppercase">Click to Watch Video</span>
+                    </div>
+                    
+                    {/* Text Content */}
+                    <h3 className="text-sm sm:text-lg md:text-2xl font-bold mb-1 sm:mb-2">Watch Our Machines in Action</h3>
+                    <p className="text-gray-200 text-xs sm:text-sm md:text-base max-w-xs sm:max-w-md mx-auto hidden sm:block">
+                      See our precision machinery at work in our state-of-the-art manufacturing facility
+                    </p>
+                  </div>
                 </div>
               </div>
-            </div>
-            
-            {/* Video Controls Overlay (Bottom) */}
-            <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/80 to-transparent p-4 sm:p-6">
-              <div className="flex items-center justify-between">
-                <div className="flex items-center space-x-3">
-                  <div className="w-2 h-2 bg-white rounded-full"></div>
-                  <span className="text-white text-xs sm:text-sm font-medium">HD Quality</span>
-                </div>
-                <div className="flex items-center space-x-2">
-                  <button className="text-white/80 hover:text-white transition-colors">
-                    <svg className="w-4 h-4 sm:w-5 sm:h-5" fill="currentColor" viewBox="0 0 24 24">
-                      <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/>
-                    </svg>
-                  </button>
-                  <button className="text-white/80 hover:text-white transition-colors">
-                    <svg className="w-4 h-4 sm:w-5 sm:h-5" fill="currentColor" viewBox="0 0 24 24">
-                      <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/>
-                    </svg>
-                  </button>
-                </div>
-              </div>
-            </div>
+            )}
           </div>
         </div>
       </section>
@@ -297,7 +322,7 @@ export default function Home() {
             {/* Title Section */}
             <div className="relative bg-gradient-to-r from-blue-900 via-purple-900 to-pink-600 p-4">
               <h3 className="text-white font-semibold text-center">
-                Turning Machines (PLC/CNC)
+                Turning Line
               </h3>
             </div>
           </div>
@@ -460,8 +485,20 @@ export default function Home() {
           </div>
         </section>
 
-      <Footer />
+      
+
+      <Footer onDownloadComplete={() => setShowThankYou(true)} />
       <FloatingInquiryForm />
+      
+      {/* Thank You Popup - Rendered outside main for proper z-index */}
+      {showThankYou && (
+        <Popup 
+          isOpen={showThankYou} 
+          onClose={() => setShowThankYou(false)} 
+          message="Thank you for choosing SRD Machines"
+          autoCloseDelay={3000}
+        />
+      )}
     </main>
   );
 }

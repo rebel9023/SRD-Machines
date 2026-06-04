@@ -3,64 +3,64 @@
     "id": 1,
     "name": "Grinding Machines",
     "description": "We are the most versatile Automatic Grinding Machine supplier in Gujarat. Our machine can grind multiple bearings simultaneously, which helps to reduce the time and costs associated with manual grinding. The machine also uses advanced technology, such as computer numerical control (CNC), to automate the grinding process, ensuring accuracy and consistency.",
-    "image": "/machines/Gm.png",
-    "thumbnails": ["/machines/Gm.png", "/machines/machine2.png", "/machines/Gm.png", "/machines/machine2.png"],
+    "image": "/machines/gm.jpg",
+    "thumbnails": ["/machines/gm.jpg", "/machines/gm.jpg", "/machines/gm.jpg", "/machines/gm.jpg"],
     "category": "Grinding"
   },
   {
     "id": 2,
-    "name": "Turning Machines (PLC/CNC)",
-    "description": "Advanced turning machines with PLC and CNC control systems for precision manufacturing. These machines offer exceptional accuracy and repeatability for complex turning operations.",
-    "image": "/machines/Tm.png",
-    "thumbnails": ["/machines/Tm.png", "/machines/Tm.png", "/machines/Tm.png", "/machines/Tm.png"],
+    "name": "Fully Automatic Turning Line",
+    "description": "specializes in providing fully automated and semi-automated PLC/CNC turning machines for a wide range of applications.",
+    "image": "/machines/Fully Automatic Turning.png",
+    "thumbnails": ["/machines/Fully Automatic Turning.png", "/machines/Fully Automatic Turning.png", "/machines/Fully Automatic Turning.png", "/machines/Fully Automatic Turning.png"],
     "category": "Turning"
   },
   {
     "id": 3,
-    "name": "CNC Machines",
-    "description": "Computer Numerical Control machines for precision manufacturing with advanced automation capabilities and high-speed processing.",
-    "image": "/machines/machine1.png",
-    "thumbnails": ["/machines/machine1.png", "/machines/machine2.png", "/machines/machine1.png", "/machines/machine2.png"],
+    "name": " CNC Turning Machine",
+    "description": "Advanced turning machines with PLC and CNC control systems for precision manufacturing. These machines offer exceptional accuracy and repeatability for complex turning operations.",
+    "image": "/machines/cnc_machine.jpg",
+    "thumbnails": ["/machines/cnc_machine.jpg", "/machines/cnc_machine.jpg", "/machines/cnc_machine.jpg", "/machines/cnc_machine.jpg"],
     "category": "CNC"
   },
   {
     "id": 4,
     "name": "Automatic Measuring Machine",
     "description": "Automated measuring systems for quality control with high precision sensors and advanced measurement algorithms.",
-    "image": "/machines/machine2.png",
-    "thumbnails": ["/machines/machine2.png", "/machines/machine1.png", "/machines/machine2.png", "/machines/machine1.png"],
+    "image": "/machines/Measuring Machine.png",
+    "thumbnails": ["/machines/Measuring Machine.png", "/machines/Measuring Machine.png", "/machines/Measuring Machine.png", "/machines/Measuring Machine.png"],
     "category": "Measuring"
   },
   {
     "id": 5,
-    "name": "Automatic Washing Machine",
-    "description": "Industrial washing systems for parts cleaning with multiple cleaning cycles and advanced filtration systems.",
-    "image": "/machines/machine1.png",
-    "thumbnails": ["/machines/machine1.png", "/machines/machine2.png", "/machines/machine1.png", "/machines/machine2.png"],
-    "category": "Washing"
+    "name": "Automatic Parting Machine",
+    "description": "Industrial parting systems for precise separation of materials with advanced cutting technology and automation features.",
+    "image": "/machines/Parting machine with table.png",
+    "thumbnails": ["/machines/Parting machine with table.png", "/machines/Parting machine with table.png", "/machines/Parting machine with table.png", "/machines/Parting machine with table.png"],
+    "category": "Parting"
   },
   {
     "id": 6,
-    "name": "Automatic Packing Machine",
-    "description": "Automated packing solutions for industrial products with high-speed packaging capabilities and quality control features.",
-    "image": "/machines/machine2.png",
-    "thumbnails": ["/machines/machine2.png", "/machines/machine1.png", "/machines/machine2.png", "/machines/machine1.png"],
-    "category": "Packing"
+    "name": "Special Purpose machines (SRM)",
+    "description": "SPMs are engineered to perform a unique function that standard, off-the-shelf machines cannot efficiently handle.",
+    "image": "/machines/Special Purpose machines (SRM).png",
+    "thumbnails": ["/machines/Special Purpose machines (SRM).png", "/machines/Special Purpose machines (SRM).png", "/machines/Special Purpose machines (SRM).png", "/machines/Special Purpose machines (SRM).png"],
+    "category": "SRM"
   },
   {
     "id": 7,
-    "name": "Pipe Cutting Machine",
-    "description": "Precision pipe cutting machines for various materials with advanced cutting technology and automated feed systems.",
-    "image": "/machines/machine1.png",
-    "thumbnails": ["/machines/machine1.png", "/machines/machine2.png", "/machines/machine1.png", "/machines/machine2.png"],
-    "category": "Cutting"
+    "name": "Eddy Current Testing Machine (ECT)",
+    "description": "Eddy current testing uses the principle of electromagnetic induction to detect the flaws in the components.Multi-level Checking. Out Of value components/Reject components will automatically throw out in to respective rejection box. Dynamically ECT is done both side for O.D, Bore, & Face. Visual checking is also done dynamically for O.D. & Bore..",
+    "image": "/machines/Automatic Eddy Current Testing Machine.png",
+    "thumbnails": ["/machines/Automatic Eddy Current Testing Machine.png", "/machines/Automatic Eddy Current Testing Machine.png", "/machines/Automatic Eddy Current Testing Machine.png", "/machines/Automatic Eddy Current Testing Machine.png"],
+    "category": "ECT"
   },
   {
     "id": 8,
-    "name": "Automatic Lathe Machine",
-    "description": "High-speed automatic lathe machines for mass production with advanced tooling systems and precision control.",
-    "image": "/machines/machine2.png",
-    "thumbnails": ["/machines/machine2.png", "/machines/machine1.png", "/machines/machine2.png", "/machines/machine1.png"],
-    "category": "Lathe"
+    "name": "other machines",
+    "description": "Machines that Moves World.",
+    "image": "/machines/others machines.png",
+    "thumbnails": ["/machines/others machines.png", "/machines/others machines.png", "/machines/others machines.png", "/machines/others machines.png"],
+    "category": "Other Machines"
   }
 ]

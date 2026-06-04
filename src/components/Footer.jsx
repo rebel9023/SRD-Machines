@@ -16,7 +16,7 @@ import {
   MessageCircle
 } from 'lucide-react';
 
-const Footer = () => {
+const Footer = ({ onDownloadComplete }) => {
   // State for email input and validation
   const [email, setEmail] = useState('');
   const [emailError, setEmailError] = useState('');
@@ -61,6 +61,11 @@ const Footer = () => {
       
       // Show success message
       setDownloadSuccess(true);
+      
+      // Trigger popup callback if provided
+      if (onDownloadComplete) {
+        onDownloadComplete();
+      }
       
       // Reset form after successful download
       setTimeout(() => {
